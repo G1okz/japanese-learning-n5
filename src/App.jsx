@@ -145,10 +145,6 @@ function App() {
                 {currentQuestion.question}
               </Text>
               
-              <Text fontSize={{ base: "lg", md: "xl" }} textAlign="center" color="gray.600">
-                {currentQuestion.reading}
-              </Text>
-              
               <VStack spacing={3} mt={2}>
                 {currentQuestion.options.map((option, index) => (
                   <Button
