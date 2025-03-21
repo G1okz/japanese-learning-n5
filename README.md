@@ -1,37 +1,44 @@
 # Aplicación de Aprendizaje de Japonés N5
 
-Una aplicación web interactiva para aprender vocabulario japonés del nivel N5.
+Una aplicación web interactiva para aprender vocabulario japonés del nivel N5 (equivalente a A2).
 
 ## Características
 
 - 20 preguntas de vocabulario
-- Primeras 10 preguntas: japonés → español
-- Siguientes 10 preguntas: español → japonés
-- Explicaciones detalladas
+- Primeras 10 preguntas: Japonés → Español
+- Últimas 10 preguntas: Español → Japonés
 - Sistema de puntuación
-- Interfaz optimizada para móviles
-- Diseño responsive
+- Retroalimentación inmediata
+- Explicaciones detalladas
+- Interfaz adaptativa para móviles
 
-## Instalación Local
+## Instalación
 
-1. Clona el repositorio
+1. Clona el repositorio:
+```bash
+git clone https://github.com/G1okz/japanese-learning-n5.git
+```
+
 2. Instala las dependencias:
 ```bash
 npm install
 ```
+
 3. Inicia el servidor de desarrollo:
 ```bash
 npm run dev
 ```
 
-## Despliegue en Lovable
+## Despliegue
+
+Para desplegar la aplicación:
 
 1. Construye la aplicación:
 ```bash
 npm run build
 ```
-2. La carpeta `dist` contendrá los archivos de producción
-3. Sube la carpeta `dist` a Lovable siguiendo sus instrucciones de despliegue
+
+2. La carpeta `dist` contendrá los archivos de producción listos para ser desplegados en cualquier servicio de hosting.
 
 ## Tecnologías Utilizadas
 
