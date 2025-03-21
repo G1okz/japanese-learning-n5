@@ -106,7 +106,7 @@ function App() {
         <Container maxW="container.md" py={5}>
           <VStack spacing={4}>
             <Text fontSize="xl" textAlign="center">¡Prueba completada! Tu puntuación: {score}/20</Text>
-            <Button colorScheme="blue" size="lg" w="100%" maxW="300px">
+            <Button colorScheme="blue" size="lg" w="100%" maxW="300px" onClick={handleRestart}>
               Reiniciar Prueba
             </Button>
           </VStack>
