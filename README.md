@@ -1,6 +1,7 @@
 # Aplicación de Aprendizaje de Japonés N5
 
 Una aplicación web interactiva para aprender vocabulario japonés del nivel N5 del JLPT (Japanese Language Proficiency Test).
+Puedes probar la aplicación a traves de este enlace: https://japanese-learning-n5.netlify.app/
 
 ## 🎯 Características
 
@@ -37,8 +38,6 @@ npm install
 npm run dev
 ```
 
-4. Abre tu navegador y visita `http://localhost:5173`
-
 ## 📱 Uso
 
 1. Inicia la aplicación y presiona "Comenzar Quiz"
@@ -70,8 +69,6 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) par
 ## 👤 Autor
 
 - **Miguel Reyna**
-  - LinkedIn: [Miguel Reyna](https://www.linkedin.com/in/miguel-reyna-ca%C3%B1adillas/)
-  - GitHub: [G1okz](https://github.com/g1okz)
 
 ## 🙏 Agradecimientos
 
