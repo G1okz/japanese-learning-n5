@@ -1,7 +1,9 @@
-import { Box, Text, HStack, Link, Icon } from '@chakra-ui/react'
+import { Box, Text, HStack, Link, Icon, useColorMode } from '@chakra-ui/react'
 import { FaLinkedin, FaGithub } from 'react-icons/fa'
 
 export const Footer = () => {
+  const { colorMode } = useColorMode()
+
   return (
     <Box as="footer" mt={{ base: 6, md: 8 }} textAlign="center">
       <Text mb={2} fontSize={{ base: "sm", md: "md" }}>
@@ -12,7 +14,12 @@ export const Footer = () => {
           <Icon as={FaLinkedin} w={{ base: 5, md: 6 }} h={{ base: 5, md: 6 }} color="blue.500" />
         </Link>
         <Link href="https://github.com/g1okz" isExternal>
-          <Icon as={FaGithub} w={{ base: 5, md: 6 }} h={{ base: 5, md: 6 }} color="gray.700" />
+          <Icon 
+            as={FaGithub} 
+            w={{ base: 5, md: 6 }} 
+            h={{ base: 5, md: 6 }} 
+            color={colorMode === 'dark' ? 'white' : 'gray.700'} 
+          />
         </Link>
       </HStack>
     </Box>
