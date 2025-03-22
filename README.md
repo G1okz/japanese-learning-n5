@@ -29,17 +29,6 @@ npm install
 npm run dev
 ```
 
-## Despliegue
-
-Para desplegar la aplicación:
-
-1. Construye la aplicación:
-```bash
-npm run build
-```
-
-2. La carpeta `dist` contendrá los archivos de producción listos para ser desplegados en cualquier servicio de hosting.
-
 ## Tecnologías Utilizadas
 
 - React
@@ -49,15 +38,11 @@ npm run build
 
 ## Uso
 
-1. Se te mostrará una palabra o frase en japonés
+1. Se te mostrará una palabra en japonés
 2. Selecciona la traducción correcta entre las opciones disponibles
 3. Recibirás retroalimentación inmediata sobre tu respuesta
 4. Lee la explicación para aprender más sobre la palabra o frase
 5. Presiona "Siguiente Pregunta" para continuar
-
-## Contribuir
-
-Las contribuciones son bienvenidas. Por favor, abre un issue primero para discutir los cambios que te gustaría hacer.
 
 ## Licencia
 
