@@ -60,8 +60,8 @@ export const useQuiz = () => {
 
   const getButtonIcon = (option) => {
     if (!showExplanation) return null
-    if (option === currentQuestion.correctAnswer) return <FaCheck />
-    if (option === selectedAnswer && option !== currentQuestion.correctAnswer) return <FaTimes />
+    if (option === currentQuestion.correctAnswer) return 'check'
+    if (option === selectedAnswer && option !== currentQuestion.correctAnswer) return 'times'
     return null
   }
 

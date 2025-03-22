@@ -9,6 +9,17 @@ export const QuestionCard = ({
   getButtonColorScheme, 
   getButtonIcon 
 }) => {
+  const renderIcon = (iconType) => {
+    switch (iconType) {
+      case 'check':
+        return <FaCheck />
+      case 'times':
+        return <FaTimes />
+      default:
+        return null
+    }
+  }
+
   return (
     <Box 
       p={{ base: 3, md: 4 }} 
@@ -48,7 +59,7 @@ export const QuestionCard = ({
               fontSize={{ base: "sm", md: "lg" }}
               onClick={() => !showExplanation && onAnswer(option)}
               isDisabled={showExplanation}
-              leftIcon={getButtonIcon(option)}
+              leftIcon={renderIcon(getButtonIcon(option))}
               transition="all 0.2s"
               _hover={!showExplanation ? { transform: 'scale(1.02)' } : {}}
               whiteSpace="normal"
