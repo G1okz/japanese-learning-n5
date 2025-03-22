@@ -75,19 +75,26 @@ export const QuestionCard = ({
           <Box 
             mt={4} 
             p={{ base: 2, md: 3 }} 
-            bg="gray.50" 
+            bg="gray.100"
+            _dark={{ bg: "gray.700" }}
             borderRadius="md" 
             borderWidth="1px"
+            borderColor="gray.200"
+            _dark={{ borderColor: "gray.600" }}
           >
             <Text 
               fontWeight="bold" 
               mb={2} 
               fontSize={{ base: "xs", md: "md" }}
+              color="gray.800"
+              _dark={{ color: "gray.100" }}
             >
               Explicación:
             </Text>
             <Text 
               fontSize={{ base: "xs", md: "md" }}
+              color="gray.700"
+              _dark={{ color: "gray.200" }}
             >
               {question.explanation}
             </Text>
