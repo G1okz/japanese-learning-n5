@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getRandomWord, resetUsedWords } from '../services/jishoApi'
+import { FaCheck, FaTimes } from 'react-icons/fa'
 
 export const useQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -9,9 +10,16 @@ export const useQuiz = () => {
   const [isFinished, setIsFinished] = useState(false)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
 
+  const loadQuestion = () => {
+    const question = getRandomWord()
+    if (question) {
+      setCurrentQuestion(question)
+    }
+  }
+
   useEffect(() => {
     resetUsedWords()
-    setCurrentQuestion(getRandomWord())
+    loadQuestion()
   }, [])
 
   const handleAnswer = (answer) => {
@@ -25,7 +33,7 @@ export const useQuiz = () => {
   const handleNextQuestion = () => {
     if (questionNumber < 20) {
       setQuestionNumber(questionNumber + 1)
-      setCurrentQuestion(getRandomWord())
+      loadQuestion()
       setShowExplanation(false)
       setSelectedAnswer(null)
     } else {
@@ -35,7 +43,7 @@ export const useQuiz = () => {
 
   const handleRestart = () => {
     resetUsedWords()
-    setCurrentQuestion(getRandomWord())
+    loadQuestion()
     setQuestionNumber(1)
     setScore(0)
     setShowExplanation(false)
@@ -52,8 +60,8 @@ export const useQuiz = () => {
 
   const getButtonIcon = (option) => {
     if (!showExplanation) return null
-    if (option === currentQuestion.correctAnswer) return 'check'
-    if (option === selectedAnswer && option !== currentQuestion.correctAnswer) return 'times'
+    if (option === currentQuestion.correctAnswer) return <FaCheck />
+    if (option === selectedAnswer && option !== currentQuestion.correctAnswer) return <FaTimes />
     return null
   }
 
