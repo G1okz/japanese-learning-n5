@@ -1,7 +1,7 @@
-import { ChakraProvider, Box, VStack, Heading, Text, Button, Container, Spinner, Badge, Progress, HStack, Icon, useToast, Stack } from '@chakra-ui/react'
+import { ChakraProvider, Box, VStack, Heading, Text, Button, Container, Spinner, Badge, Progress, HStack, Icon, useToast, Stack, Link } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
 import { getRandomWord, resetUsedWords } from './services/jishoApi'
-import { FaCheck, FaTimes } from 'react-icons/fa'
+import { FaCheck, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -187,6 +187,18 @@ function App() {
               {questionNumber < 20 ? 'Siguiente Pregunta' : 'Finalizar Prueba'}
             </Button>
           )}
+
+          <Box as="footer" mt={8} textAlign="center">
+            <Text mb={2}>Desarrollado por @Miguel Reyna</Text>
+            <HStack spacing={4} justify="center">
+              <Link href="https://www.linkedin.com/in/miguel-reyna-ca%C3%B1adillas/" isExternal>
+                <Icon as={FaLinkedin} w={6} h={6} color="blue.500" />
+              </Link>
+              <Link href="https://github.com/g1okz" isExternal>
+                <Icon as={FaGithub} w={6} h={6} color="gray.700" />
+              </Link>
+            </HStack>
+          </Box>
         </VStack>
       </Container>
     </ChakraProvider>
