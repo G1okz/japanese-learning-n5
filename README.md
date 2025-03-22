@@ -1,6 +1,7 @@
 # Aplicación de Aprendizaje de Japonés N5
 
 Una aplicación web interactiva para aprender vocabulario japonés del nivel N5 (equivalente a A2).
+Puedes probar la aplicación a traves de este enlace: https://japanese-learning-n5.netlify.app/
 
 ## Características
 
