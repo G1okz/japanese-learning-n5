@@ -12,10 +12,11 @@ export const ThemeToggle = () => {
       aria-label="Cambiar tema"
       colorScheme="blue"
       variant="ghost"
-      size="lg"
+      size={{ base: "md", md: "lg" }}
       position="absolute"
-      top={4}
-      right={4}
+      top={{ base: 1, md: 0 }}
+      right={{ base: 1, md: 4 }}
+      zIndex={1}
     />
   )
 } 

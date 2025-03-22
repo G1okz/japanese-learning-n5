@@ -3,12 +3,13 @@ import { ThemeToggle } from './ThemeToggle'
 
 export const ResultScreen = ({ score, onRestart }) => {
   return (
-    <VStack spacing={4}>
+    <VStack spacing={4} position="relative" minH="80vh" justify="center">
       <ThemeToggle />
       <Text 
-        fontSize={{ base: "lg", md: "xl" }} 
+        fontSize={{ base: "md", md: "xl" }} 
         textAlign="center"
         px={{ base: 4, md: 0 }}
+        mt={{ base: 8, md: 0 }}
       >
         ¡Prueba completada! Tu puntuación: {score}/20
       </Text>

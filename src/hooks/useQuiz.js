@@ -75,6 +75,7 @@ export const useQuiz = () => {
     handleNextQuestion,
     handleRestart,
     getButtonColorScheme,
-    getButtonIcon
+    getButtonIcon,
+    setIsFinished
   }
 } 

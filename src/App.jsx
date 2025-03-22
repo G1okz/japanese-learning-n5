@@ -31,7 +31,7 @@ function App() {
 
   return (
     <Container maxW="container.md" py={{ base: 4, md: 5 }}>
-      <QuizScreen {...quiz} />
+      <QuizScreen {...quiz} onRestart={() => setIsStartScreen(true)} />
     </Container>
   )
 }
