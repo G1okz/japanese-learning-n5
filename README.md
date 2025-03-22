@@ -47,3 +47,15 @@ npm run dev
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+<div align="center">
+  <p>Desarrollado por @Miguel Reyna</p>
+  <a href="https://www.linkedin.com/in/miguel-reyna-ca%C3%B1adillas/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://github.com/g1okz" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+</div>
