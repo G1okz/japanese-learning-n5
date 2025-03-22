@@ -1,7 +1,7 @@
 import { ChakraProvider, Box, VStack, Heading, Text, Button, Container, Spinner, Badge, Progress, HStack, Icon, useToast, Stack, Link } from '@chakra-ui/react'
 import { useState, useEffect } from 'react'
 import { getRandomWord, resetUsedWords } from './services/jishoApi'
-import { FaCheck, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaCheck, FaTimes, FaLinkedin, FaGithub, FaPlay } from 'react-icons/fa'
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(null)
@@ -10,6 +10,7 @@ function App() {
   const [showExplanation, setShowExplanation] = useState(false)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [isFinished, setIsFinished] = useState(false)
+  const [isStartScreen, setIsStartScreen] = useState(true)
   const toast = useToast()
 
   const loadNewQuestion = async () => {
@@ -86,6 +87,11 @@ function App() {
     loadNewQuestion()
   }
 
+  const handleStart = () => {
+    setIsStartScreen(false)
+    loadNewQuestion()
+  }
+
   const getButtonColorScheme = (option) => {
     if (!showExplanation) return 'blue'
     if (option === currentQuestion.correctAnswer) return 'green'
@@ -98,6 +104,57 @@ function App() {
     if (option === currentQuestion.correctAnswer) return <Icon as={FaCheck} />
     if (option === selectedAnswer && option !== currentQuestion.correctAnswer) return <Icon as={FaTimes} />
     return null
+  }
+
+  if (isStartScreen) {
+    return (
+      <ChakraProvider>
+        <Container maxW="container.md" py={5}>
+          <VStack spacing={8} align="center" justify="center" minH="80vh">
+            <Heading size="2xl" textAlign="center" color="blue.500">
+              Estudiando Japonés N5
+            </Heading>
+            
+            <Text fontSize="xl" textAlign="center" color="gray.600">
+              Pon a prueba tus conocimientos de vocabulario japonés con este quiz interactivo
+            </Text>
+
+            <Box p={6} borderWidth="1px" borderRadius="lg" w="100%" maxW="600px">
+              <VStack spacing={4} align="stretch">
+                <Text fontSize="lg" fontWeight="bold">Características:</Text>
+                <Text>• 20 preguntas de vocabulario</Text>
+                <Text>• Sistema de puntuación en tiempo real</Text>
+                <Text>• Retroalimentación inmediata</Text>
+                <Text>• Explicaciones detalladas</Text>
+                <Text>• Interfaz adaptativa para móviles</Text>
+              </VStack>
+            </Box>
+
+            <Button
+              leftIcon={<FaPlay />}
+              colorScheme="blue"
+              size="lg"
+              w="200px"
+              onClick={handleStart}
+            >
+              Comenzar Quiz
+            </Button>
+
+            <Box as="footer" mt={8} textAlign="center">
+              <Text mb={2}>Desarrollado por @Miguel Reyna</Text>
+              <HStack spacing={4} justify="center">
+                <Link href="https://www.linkedin.com/in/miguel-reyna-ca%C3%B1adillas/" isExternal>
+                  <Icon as={FaLinkedin} w={6} h={6} color="blue.500" />
+                </Link>
+                <Link href="https://github.com/g1okz" isExternal>
+                  <Icon as={FaGithub} w={6} h={6} color="gray.700" />
+                </Link>
+              </HStack>
+            </Box>
+          </VStack>
+        </Container>
+      </ChakraProvider>
+    )
   }
 
   if (isFinished || !currentQuestion) {
